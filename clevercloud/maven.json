@@ -1,8 +1,9 @@
 {
-    "build": {
-        "goal": "package"
-    },
-    "deploy": {
-        "goal": "spring-boot:run"
-    }
+  "build": {
+    "type": "maven",
+    "goal": "package"
+  },
+  "deploy": {
+    "jarName": "target/springboot-rest-mongodb-0.0.1-SNAPSHOT.jar"
+  }
 }

@@ -1,0 +1,14 @@
+{
+   "build": {
+      "type": "maven",
+      "goal": "package"
+   },
+   "deploy": {
+      "container": "TOMCAT8",
+      "war": [
+         {
+            "file": "target/springboot-rest-mongodb-0.0.1-SNAPSHOT.war"
+         }
+      ]
+   }
+}

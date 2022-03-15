@@ -1,8 +1,0 @@
-{
-    "build": {
-        "goal": "package"
-    },
-    "deploy": {
-        "goal": "spring-boot:run"
-    }
-}

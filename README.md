@@ -58,7 +58,7 @@ In the environment variables, create `MAVEN_DEPLOY_GOAL` and set it to `spring-b
 Create new user
 
 ```bash
-curl -d '{"firstName":"DUVAL", "lastName":"Alexandre"}' -H "Content-Type: application/json" -X POST https://<appId>.cleverapps.io/users
+curl -d '{"firstName":"Robert", "lastName":"Cloud"}' -H "Content-Type: application/json" -X POST https://<appId>.cleverapps.io/users
 ```
 
 Get users list

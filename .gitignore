@@ -1,2 +1,8 @@
 target/
 .clever.json
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath

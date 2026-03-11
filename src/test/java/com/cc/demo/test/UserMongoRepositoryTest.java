@@ -1,28 +1,25 @@
 package com.cc.demo.test;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 
 import com.cc.demo.repository.UserMongoRepository;
 import com.cc.demo.entity.User;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class UserMongoRepositoryTest {
     @Autowired
     private UserMongoRepository repository;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    public void setUp() {
         User user1 = new User("Alice", "Clever");
         User user2 = new User("Bob", "Cloud");
         assertNull(user1.getId());
@@ -38,7 +35,7 @@ public class UserMongoRepositoryTest {
         User userA = repository.findByFirstName("Bob");
         assertNotNull(userA);
         List<User> users = repository.findAll();
-        assertEquals(users.size(), 2);
+        assertEquals(2, users.size());
     }
 
     @Test
@@ -51,8 +48,8 @@ public class UserMongoRepositoryTest {
         assertEquals("Cloud", userC.getLastName());
     }
 
-    @After
-    public void tearDown() throws Exception {
+    @AfterEach
+    public void tearDown() {
         this.repository.deleteAll();
     }
 
